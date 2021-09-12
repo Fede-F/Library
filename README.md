@@ -1,6 +1,10 @@
 # Library
 This is a book library from The Odin Project [curriculum](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library) using JavaScript, HTML and CSS.
 ## Overview
+
+### New:
+- The code was refactorized using Class and Module Pattern
+
 ### Features:
 - Data is saved in sessionStorage, so the data will erase after the tab is closed
 - You can add a book to the library
@@ -12,6 +16,5 @@ This is a book library from The Odin Project [curriculum](https://www.theodinpro
 
 ### Tools:
 - Visual Studio Code
-- Linux terminal
 - Git and GitHub
 - [Bootstrap](https://getbootstrap.com/)
