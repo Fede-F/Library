@@ -37,7 +37,7 @@
             <input class="form-check-input" type="checkbox" id="readSiwtch">
             <label class="form-check-label" for="readSiwtch">Si</label>
           </div>
-          <button type="button" class="btn btn-primary" id="b_save">Guardar</button>
+          <button type="button" class="btn btn-primary" id="b_save" onclick="displayController.submitForm()">Guardar</button>
         </form>
         <div class="alert alert-success" role="alert" id="alert">
           ¡Libro guardado exitosamente!
@@ -54,7 +54,7 @@
   </div>
 <footer>
   <div class="bg-light py-4">
-    <p class="text-muted mb-0 py-2">Autor: <a href="https://github.com/Fede-F/Library">Federico Fernandez</a></p>
+    <p id="footer_txt" class="text-muted mb-0 py-2">@Autor: <a href="https://github.com/Fede-F/Library">Federico Fernandez</a></p>
   </div>
 </footer>
 </body>
