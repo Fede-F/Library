@@ -13,7 +13,6 @@ class Book {
     }
 }
 
-
 const LibraryLogic = (() => {
     let myLibrary = [];
     let bookId = 0;
@@ -28,7 +27,6 @@ const LibraryLogic = (() => {
     }
 
     const LibraryLoad = () => {
-
         //Si hay datos en la sesion los guardo dentro del array local
         if (sessionStorage.getItem('books')) {
             myLibrary = JSON.parse(sessionStorage.getItem('books'))
@@ -52,7 +50,6 @@ const LibraryLogic = (() => {
 
     //Agrega el nuevo libro a la lista
     const addBookToLibrary = (title, author, pages, read) => {
-
         if (validateEntry(title, author, pages)) {
             bookId++;
             let newBook = new Book(bookId, title, author, pages, read);
@@ -99,20 +96,15 @@ const LibraryLogic = (() => {
         for (var i = 0; i < myLibrary.length; i++)
             if (myLibrary[i].bookId === bookReadId) {
                 if (checkboxElem.checked) {
-                    if (myLibrary[i].read != "Si") {
-                        myLibrary[i].read = "Si"
-                    }
+                    myLibrary[i].read = "Si"
                 } else {
-                    if (myLibrary[i].read != "No") {
-                        myLibrary[i].read = "No"
-                    }
+                    myLibrary[i].read = "No"
                 }
                 //guardo el cambio
                 updateSessionStore()
                 break;
             }
     }
-
     //Elimina el div y el libro del array
     const deleteBook = (bookIdDel) => {
         //Recorre el array
@@ -129,7 +121,6 @@ const LibraryLogic = (() => {
             }
     }
 
-
     return {
         LibraryLoad,
         addBookToLibrary,
@@ -138,14 +129,9 @@ const LibraryLogic = (() => {
     };
 })();
 
-
-
 const displayController = (() => {
-
     //Se obtiene el container donde se van a mostrar la lista de libros
     const container = document.getElementById('listBooks');
-
-
     //Muestra los libros en tarjetas
     const ShowBookList = (bookId, title, author, pages, read) => {
         let content;
@@ -164,7 +150,9 @@ const displayController = (() => {
         <div class="card" id="${bookId}">
             <div class="card-header" id="heading-${bookId}">
                 <h5>${title}</h5>
-                <button type="button" id="deleteBook" class="btn btn-outline-danger" onclick="LibraryLogic.deleteBook(${bookId})">X</button>
+                <div id="deleteButton_div">
+                    <button type="button" id="deleteBook" onclick="LibraryLogic.deleteBook(${bookId})">x</button>
+                </div>
             </div>
             <div class="card-body">
                 <div id="bookInfo">
@@ -183,7 +171,6 @@ const displayController = (() => {
         container.innerHTML += content;
     };
 
-
     const successMessage = (state) => {
         let successMessage = document.getElementById('alert');
         successMessage.style.display = state;
@@ -192,14 +179,12 @@ const displayController = (() => {
             return;
         }
         return;
-
     };
 
     //Mensaje de alerta 
     const alertMessage = (message) => {
         alert(message);
         return;
-
     };
 
     //Guarda los datos ingresados cuando se presiona el boton guardar
