@@ -21,15 +21,15 @@
         <form name="newBook" id="newBook">
           <div class="mb-3">
             <label for="bookTitle" class="form-label">Título:</label>
-            <input type="text" class="form-control" id="bookTitle">
+            <input type="text" class="form-control" id="bookTitle" required>
           </div>
           <div class="mb-3">
             <label for="bookAuthor" class="form-label">Autor:</label>
-            <input type="text" class="form-control" id="bookAuthor">
+            <input type="text" class="form-control" id="bookAuthor" required>
           </div>
           <div class="mb-3">
             <label for="bookPages" class="form-label">Cantidad de páginas:</label>
-            <input type="number " class="form-control" id="bookPages">
+            <input type="number " class="form-control" id="bookPages" required>
           </div>
           <p>¿Leído?:</p>
           <div class="form-check form-switch" id="switch_div">
@@ -37,7 +37,7 @@
             <input class="form-check-input" type="checkbox" id="readSiwtch">
             <label class="form-check-label" for="readSiwtch">Si</label>
           </div>
-          <button type="button" class="btn btn-primary" id="b_save" onclick="displayController.submitForm()">Guardar</button>
+          <button type="submit" class="btn btn-primary" id="b_save" onclick="displayController.submitForm()">Guardar</button>
         </form>
         <div class="alert alert-success" role="alert" id="alert">
           ¡Libro guardado exitosamente!
@@ -53,7 +53,7 @@
     </div>
   </div>
 <footer>
-  <div class="bg-light py-4">
+  <div class="footer_div">
     <p id="footer_txt" class="text-muted mb-0 py-2">@Autor: <a href="https://github.com/Fede-F/Library">Federico Fernandez</a></p>
   </div>
 </footer>
